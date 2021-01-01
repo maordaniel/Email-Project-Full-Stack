@@ -63,7 +63,7 @@ function Search(){
                                 <input className={"search_input"} value={emailAddress}
                                     placeholder={"Enter your email address"}
                                     onChange={e => {
-                                       setEmailAddress(e.target.value);
+                                       setEmailAddress(e.target.value.toLowerCase(););
                                        setErrorEmailAddress('');
                                        if (validateEmail(e.target.value)){
                                                 setSuccessEmailAddress(true);
