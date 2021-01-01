@@ -33,7 +33,7 @@ function Search(){
             return
         }
 
-        const data = {user: emailAddress};
+        const data = {user: emailAddress.toLowerCase()};
         try {
             const res = await PostData('/login', data);
             if (res.status === 200) {
@@ -63,7 +63,7 @@ function Search(){
                                 <input className={"search_input"} value={emailAddress}
                                     placeholder={"Enter your email address"}
                                     onChange={e => {
-                                       setEmailAddress(e.target.value.toLowerCase());
+                                       setEmailAddress(e.target.value);
                                        setErrorEmailAddress('');
                                        if (validateEmail(e.target.value)){
                                                 setSuccessEmailAddress(true);
