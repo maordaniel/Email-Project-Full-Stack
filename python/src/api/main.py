@@ -1,8 +1,8 @@
 from flask import Flask
 import os
 from flask_cors import CORS
-from python.src.customer.customer_messages import *
-from python.src.auth.auth_api import *
+from user.user_messages import *
+from auth.auth_api import *
 
 app = Flask(__name__)
 app.secret_key = os.urandom(12)
@@ -40,4 +40,4 @@ def app_delete_message():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run()

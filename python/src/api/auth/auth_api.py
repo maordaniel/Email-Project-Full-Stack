@@ -1,4 +1,4 @@
-from python.src.functions.api_functions import *
+from ..functions.api_functions import *
 from flask import make_response, request, session
 import json
 

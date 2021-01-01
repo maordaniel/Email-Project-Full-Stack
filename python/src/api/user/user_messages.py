@@ -1,4 +1,4 @@
-from python.src.functions.api_functions import *
+from ..functions.api_functions import *
 import json
 from flask import make_response, request, jsonify, session
 
@@ -8,7 +8,7 @@ def create_message():
     try:
         content = json.loads(request.data.decode())  # get the data received in a Flask request
 
-        if not verify_email(content):   # verify emails
+        if not verify_email(content):  # verify emails
             return not_found()
         create_message_action(content)
 
