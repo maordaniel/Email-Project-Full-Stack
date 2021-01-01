@@ -56,7 +56,8 @@ function NewEmail(){
             setErrorReceiver(`${receiver} is not valid.`);
         }
         if (successSender && successReceiver && subject && message) {
-             let data = {sender: sender, receiver: receiver, subject: subject, message: message};
+             let data = {sender: sender.toLowerCase(), receiver: receiver.toLowerCase(), 
+                         subject: subject, message: message};
             try {
                 const res = await PostData('/create', data);
                 if (res.status === 201) {
@@ -103,7 +104,7 @@ function NewEmail(){
                                 value={sender}
                                 disabled={disableInput}
                                 onChange={e => {
-                                    setSender(e.target.value.toLowerCase());
+                                    setSender(e.target.value);
                                     setErrorSender('');
                                     if (validateEmail(e.target.value)){
                                         setSuccessSender(true);
@@ -137,7 +138,7 @@ function NewEmail(){
                                 value={receiver}
                                 disabled={disableInput}
                                 onChange={e => {
-                                    setReceiver(e.target.value.toLowerCase());
+                                    setReceiver(e.target.value);
                                     setErrorReceiver('');
                                     if (validateEmail(e.target.value)){
                                         setSuccessReceiver(true);
