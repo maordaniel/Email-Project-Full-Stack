@@ -60,7 +60,7 @@ function Search(){
                             }
 
                             <div className={"search"}>
-                                <input className={"search_input"} value={emailAddress}
+                                <input className={"search_input"} value={emailAddress} autoFocus
                                     placeholder={"Enter your email address"}
                                     onChange={e => {
                                        setEmailAddress(e.target.value);
