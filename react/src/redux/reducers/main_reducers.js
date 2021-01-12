@@ -7,11 +7,11 @@ const initState = {
 const main_reducers = (state = initState, action) => {
     switch (action.type){
         case "SUCCESS_SET_SENDER":
-            return state = {...state, sender: action.payload};
+            return {...state, sender: action.payload};
         case "SUCCESS_SET_RECEIVER":
-            return state = {...state, receiver: action.payload};
+            return {...state, receiver: action.payload};
         case "SUCCESS_SET_REVERSE_INPUT":
-            return state = {...state, reverseInput: true};
+            return {...state, reverseInput: true};
         default:
             return state;
     }
