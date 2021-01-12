@@ -6,9 +6,9 @@ const initState = {
 const auth_reducers = (state = initState, action) =>{
     switch (action.type) {
         case "SUCCESS_LOGIN":
-            return state = {...state, isLogged: true};
+            return {...state, isLogged: true};
         case "SUCCESS_LOGOUT":
-            return state = {...state, isLogged: false};
+            return {...state, isLogged: false};
         default:
             return state
     }
