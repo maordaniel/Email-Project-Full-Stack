@@ -11,8 +11,8 @@ def login():
         user = content["user"]
         session["user"] = user
         session['logged_in'] = True
-
-        return make_response("Ok", 200)
+        data = {'message': 'OK', 'code': 'SUCCESS'}
+        return make_response(jsonify(data), 200)
     except:
         return not_found()
 
@@ -21,6 +21,7 @@ def login():
 def logout():
     try:
         session['logged_in'] = False
-        return make_response("Ok", 200)
+        data = {'message': 'OK', 'code': 'SUCCESS'}
+        return make_response(jsonify(data), 200)
     except:
         return not_found()
