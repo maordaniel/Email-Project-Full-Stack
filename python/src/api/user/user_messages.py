@@ -31,7 +31,8 @@ def delete_message():
         if session["logged_in"]:
             if user in emails.keys():
                 delete_message_action(user, message, val)
-            return make_response("Ok", 200)
+            data = {'message': 'OK', 'code': 'SUCCESS'}
+            return make_response(jsonify(data), 200)
         return unauthorized()
 
     except:
